@@ -1,67 +1,93 @@
 import os
 import re
+import glob
 
 INPUT_DIR = "../texts/raw"          # folder where pg*.txt files are stored
 OUTPUT_DIR = "../texts/cleaned"       # folder to write cleaned files
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+# Regex to detect Gutenberg boundaries
 START_RE = re.compile(r"\*\*\* START OF (THE|THIS) PROJECT GUTENBERG EBOOK", re.IGNORECASE)
 END_RE   = re.compile(r"\*\*\* END OF (THE|THIS) PROJECT GUTENBERG EBOOK", re.IGNORECASE)
 
-def clean_gutenberg_text(text):
-    """
-    Extract main book contents by removing Gutenberg header/footer.
-    """
-    lines = text.splitlines()
-    start_index = 0
-    end_index = len(lines)
+# Regex for CHAPTER headers, e.g. "CHAPTER XXII." or "CHAPTER VI"
+CHAPTER_RE = re.compile(r"^CHAPTER\s+[A-Z0-9IVXLC]+\.?$")
 
-    # Find start marker
+def clean_gutenberg_text(text):
+    lines = text.splitlines()
+    start_index, end_index = 0, len(lines)
+
+    # Find Gutenberg START
     for i, line in enumerate(lines):
         if START_RE.search(line):
             start_index = i + 1
             break
 
-    # Find end marker
+    # Find Gutenberg END
     for i, line in enumerate(lines):
         if END_RE.search(line):
             end_index = i
             break
 
-    # Extract main book content
     content = lines[start_index:end_index]
-    
-    # Remove stray boilerplate lines
     cleaned = []
-    for line in content:
-        if "Project Gutenberg" in line:
+
+    skip_next = False  # NEW FLAG → skip subtitle line after chapter header
+
+    for i, line in enumerate(content):
+        stripped = line.strip()
+
+        # Skip Gutenberg junk
+        if "PROJECT GUTENBERG" in stripped.upper():
             continue
-        if "www.gutenberg" in line.lower():
+        if stripped.startswith("***"):
             continue
-        if line.strip().startswith("***"):
+
+        # ---- Detect CHAPTER header ----
+        if CHAPTER_RE.match(stripped):
+            skip_next = True      # skip the next line (subtitle)
             continue
+
+        # If previous line was CHAPTER, skip this line (subtitle)
+        if skip_next:
+            skip_next = False
+            continue
+
+        # Remove remaining ALL-CAPS section titles
+        if stripped.isupper() and len(stripped.split()) >= 3:
+            continue
+
         cleaned.append(line)
-    
+
     return "\n".join(cleaned).strip()
 
+
 def process_all():
-    for filename in os.listdir(INPUT_DIR):
-        if not filename.endswith(".txt"):
-            continue
-        
-        path = os.path.join(INPUT_DIR, filename)
+    merged = []
+
+    for file_path in glob.glob(os.path.join(INPUT_DIR, "*.txt")):
+        filename = os.path.basename(file_path)
         print(f"[+] Processing {filename}")
 
-        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
             raw = f.read()
 
         cleaned = clean_gutenberg_text(raw)
 
-        out_path = os.path.join(OUTPUT_DIR, filename.replace(".txt","_clean.txt"))
+        # Write cleaned version
+        out_path = os.path.join(OUTPUT_DIR, filename.replace(".txt", "_clean.txt"))
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(cleaned)
 
-        print(f"    → Saved cleaned text to {out_path}")
+        print(f"    → saved cleaned file to {out_path}")
+
+        merged.append(cleaned)
+
+    # ---- Merge into one big corpus ----
+    with open(MERGE_OUTPUT, "w", encoding="utf-8") as f:
+        f.write("\n\n".join(merged))
+
+    print(f"[✓] Finished! Corpus saved to {MERGE_OUTPUT}")
 
 if __name__ == "__main__":
     process_all()
