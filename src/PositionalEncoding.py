@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class PositionalEncoding(nn.Module):
 
-    def __init__(self, d_model, seq_len, dropout):
+    def __init__(self, d_model: int, seq_len: int, dropout: float):
         super().__init__()
         self.d_model = d_model
         self.seq_len = seq_len

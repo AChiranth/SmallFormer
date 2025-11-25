@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class LayerNormalization(nn.Module):
 
-    def __init__(self, epsilon):
+    def __init__(self, epsilon: float = 1e-6):
         super().__init__()
         self.epsilon = epsilon
         self.alpha = nn.Parameter(torch.ones(1))

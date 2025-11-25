@@ -4,7 +4,7 @@ import math
 
 class AttentionBlock():
 
-    def __init__(self, d_model, h, dropout):
+    def __init__(self, d_model: int, h: int, dropout: float):
         super().__init__()
         self.d_model = d_model
         self.h = h
@@ -21,7 +21,7 @@ class AttentionBlock():
         self.dropout = nn.Dropout(dropout)
 
     @staticmethod
-    def attention(query, key, value, mask, dropout):
+    def attention(query, key, value, mask, dropout: nn.Dropout):
         d_k = query.shape[-1]
 
         attention_scores = (query @ key.transpose(-2, -1)) / math.sqrt(d_k)
