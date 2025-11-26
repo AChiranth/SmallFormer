@@ -2,28 +2,24 @@ import os
 import re
 import glob
 
-INPUT_DIR = "../texts/raw"          # folder where pg*.txt files are stored
-OUTPUT_DIR = "../texts/cleaned"       # folder to write cleaned files
+INPUT_DIR = "../texts/raw" 
+OUTPUT_DIR = "../texts/cleaned"  
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Regex to detect Gutenberg boundaries
 START_RE = re.compile(r"\*\*\* START OF (THE|THIS) PROJECT GUTENBERG EBOOK", re.IGNORECASE)
 END_RE   = re.compile(r"\*\*\* END OF (THE|THIS) PROJECT GUTENBERG EBOOK", re.IGNORECASE)
 
-# Regex for CHAPTER headers, e.g. "CHAPTER XXII." or "CHAPTER VI"
 CHAPTER_RE = re.compile(r"^CHAPTER\s+[A-Z0-9IVXLC]+\.?$")
 
 def clean_gutenberg_text(text):
     lines = text.splitlines()
     start_index, end_index = 0, len(lines)
 
-    # Find Gutenberg START
     for i, line in enumerate(lines):
         if START_RE.search(line):
             start_index = i + 1
             break
 
-    # Find Gutenberg END
     for i, line in enumerate(lines):
         if END_RE.search(line):
             end_index = i
@@ -32,28 +28,24 @@ def clean_gutenberg_text(text):
     content = lines[start_index:end_index]
     cleaned = []
 
-    skip_next = False  # NEW FLAG → skip subtitle line after chapter header
+    skip_next = False 
 
     for i, line in enumerate(content):
         stripped = line.strip()
 
-        # Skip Gutenberg junk
         if "PROJECT GUTENBERG" in stripped.upper():
             continue
         if stripped.startswith("***"):
             continue
 
-        # ---- Detect CHAPTER header ----
         if CHAPTER_RE.match(stripped):
-            skip_next = True      # skip the next line (subtitle)
+            skip_next = True 
             continue
 
-        # If previous line was CHAPTER, skip this line (subtitle)
         if skip_next:
             skip_next = False
             continue
 
-        # Remove remaining ALL-CAPS section titles
         if stripped.isupper() and len(stripped.split()) >= 3:
             continue
 
@@ -74,7 +66,6 @@ def process_all():
 
         cleaned = clean_gutenberg_text(raw)
 
-        # Write cleaned version
         out_path = os.path.join(OUTPUT_DIR, filename.replace(".txt", "_clean.txt"))
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(cleaned)
@@ -83,7 +74,6 @@ def process_all():
 
         merged.append(cleaned)
 
-    # ---- Merge into one big corpus ----
     with open(MERGE_OUTPUT, "w", encoding="utf-8") as f:
         f.write("\n\n".join(merged))
 
