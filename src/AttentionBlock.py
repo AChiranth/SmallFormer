@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import math
 
-class AttentionBlock():
+class AttentionBlock(nn.Module):
 
     def __init__(self, d_model: int, h: int, dropout: float):
         super().__init__()

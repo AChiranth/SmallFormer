@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
-from ResidualConnection import ResidualConnection
-from LayerNormalization import LayerNormalization
-from AttentionBlock import AttentionBlock
-from FeedForwardNetwork import FeedForwardNetwork
+from .ResidualConnection import ResidualConnection
+from .LayerNormalization import LayerNormalization
+from .AttentionBlock import AttentionBlock
+from .FeedForwardNetwork import FeedForwardNetwork
 
 class DecoderBlock(nn.Module):
 
@@ -14,7 +14,7 @@ class DecoderBlock(nn.Module):
         self.residual_connections = nn.ModuleList([ResidualConnection(dropout) for i in range(2)])
 
     def forward(self, x, mask):
-        x = self.residual_connections[0](x, lambda x: self.self_attention_block(x, x, x, mask))
+        x = self.residual_connections[0](x, lambda x: self.attention_block(x, x, x, mask))
         x = self.residual_connections[1](x, self.feed_forward_block)
         return x
 
@@ -26,7 +26,7 @@ class Decoder(nn.Module):
         self.norm = LayerNormalization()
 
     def forward(self, x, mask):
-        for layer in layers:
+        for layer in self.layers:
             x = layer(x, mask)
             
         return self.norm(x)

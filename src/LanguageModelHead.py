@@ -8,4 +8,4 @@ class LanguageModelHead(nn.Module):
         self.lmhead = nn.Linear(d_model, vocab_size)
 
     def forward(self, x):
-        return torch.log_softmax(self.lmhead(x), dim = -1)
+        return self.lmhead(x)

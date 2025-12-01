@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import math
 
 class PositionalEncoding(nn.Module):
 
@@ -7,7 +8,7 @@ class PositionalEncoding(nn.Module):
         super().__init__()
         self.d_model = d_model
         self.seq_len = seq_len
-        self.dropout = dropout
+        self.dropout = nn.Dropout(dropout)
 
         #Positional encoding matrix
         pe = torch.zeros(seq_len, d_model)
@@ -23,5 +24,5 @@ class PositionalEncoding(nn.Module):
         self.register_buffer("pe", pe)
 
     def forward(self, x):
-        x = x + (self.pe[:, :x.shape[1], :]).requires_grad(False)
+        x = x + (self.pe[:, :x.shape[1], :])
         return self.dropout(x)

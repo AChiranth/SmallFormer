@@ -1,16 +1,17 @@
 import torch
 import torch.nn as nn
-from InputEmbedding import InputEmbedding
-from PositionalEncoding import PositionalEncoding
-from AttentionBlock import AttentionBlock
-from FeedForwardNetwork import FeedForwardNetwork
-from Decoder import DecoderBlock, Decoder
-from LanguageModelHead import LanguageModelHead
+from .InputEmbedding import InputEmbedding
+from .PositionalEncoding import PositionalEncoding
+from .AttentionBlock import AttentionBlock
+from .FeedForwardNetwork import FeedForwardNetwork
+from .Decoder import DecoderBlock, Decoder
+from .LanguageModelHead import LanguageModelHead
 
 
 class Transformer(nn.Module):
 
     def __init__(self, decoder: Decoder, embedding: InputEmbedding, positional: PositionalEncoding, lmhead: LanguageModelHead):
+        super().__init__()
         self.decoder = decoder
         self.embedding = embedding
         self.positional = positional
@@ -23,6 +24,13 @@ class Transformer(nn.Module):
 
     def linear(self, x):
         return self.lmhead(x)
+
+    def forward(self, x, mask = None):
+        x = self.embedding(x)
+        x = self.positional(x)
+        x = self.decoder(x, mask)
+        logits = self.lmhead(x)
+        return logits
 
 
 
@@ -38,7 +46,7 @@ def build_transformer(vocab_size: int, seq_len: int, d_model: int = 512, N: int 
     for _ in range(N):
         decoder_self_attention = AttentionBlock(d_model, h, dropout)
         feed_forward_block = FeedForwardNetwork(d_model, d_ff, dropout)
-        decoder_block = Decoder(decoder_self_attention, feed_forward_block, dropout)
+        decoder_block = DecoderBlock(decoder_self_attention, feed_forward_block, dropout)
         decoder_blocks.append(decoder_block)
 
     #Create Decoder
