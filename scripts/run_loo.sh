@@ -20,13 +20,13 @@ python scripts/loo_train.py \
     --tokens texts/tokenized/tokens.npy \
     --offsets texts/tokenized/doc_offsets.npy \
     --tokenizer tokenizer.pt \
-    --block_size 64 \
-    --batch_size 16 \
-    --epochs 1 \
-    --lr 3e-4 \
-    --d_model 256 \
+    --block_size 32 \
+    --batch_size 32 \
+    --epochs 3 \
+    --lr 7e-4 \
+    --d_model 384 \
     --n_layers 2 \
-    --n_heads 4 \
+    --n_heads 2 \
     --d_ff 1024 \
     --dropout 0.1 \
-    --downsample 10
+    --downsample 100

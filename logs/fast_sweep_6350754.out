@@ -1,0 +1,16 @@
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.3817
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3792
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3753
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3813
+
+=== LOO Fold 5/20 ===

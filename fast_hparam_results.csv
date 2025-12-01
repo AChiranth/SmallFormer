@@ -1,0 +1,2 @@
+d_model,n_heads,lr,mean_bertscore
+128,1,0.001,0.7761809736490248

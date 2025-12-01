@@ -1,13 +1,10 @@
 # scripts/training_loop.py
 import torch
 import torch.nn as nn
-from tqdm import tqdm
 
 def subsequent_mask(size):
-    """Standard causal mask."""
     mask = torch.tril(torch.ones(size, size, dtype=torch.uint8))
     return mask.unsqueeze(0).unsqueeze(0)
-
 
 def train_one_epoch(
     model,
@@ -15,23 +12,19 @@ def train_one_epoch(
     optimizer,
     criterion,
     device,
-    grad_clip=1.0,
-    use_tqdm=True
+    grad_clip=1.0
 ):
     model.train()
     total_loss = 0.0
     total_tokens = 0
 
-    iterator = tqdm(dataloader, desc="Training", leave=False) if use_tqdm else dataloader
-
-    for x, y in iterator:
-        x = x.to(device)
-        y = y.to(device)
+    for x, y in dataloader:
+        x = x.to(device, non_blocking = True)
+        y = y.to(device, non_blocking = True)
 
         B, T = x.shape
         optimizer.zero_grad(set_to_none=True)
 
-        # causal mask
         mask = torch.tril(torch.ones((1, 1, T, T), dtype=torch.uint8, device=device))
 
         logits = model(x, mask)
@@ -51,7 +44,5 @@ def train_one_epoch(
         total_loss += loss.item() * (B * T)
         total_tokens += (B * T)
 
-        if use_tqdm:
-            iterator.set_postfix(loss=loss.item())
-
+    # return mean loss for this epoch
     return total_loss / max(total_tokens, 1)

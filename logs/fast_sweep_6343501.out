@@ -1,0 +1,355 @@
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.4078
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.4033
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3870
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3991
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3991
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.4082
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3998
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.4002
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.4084
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3980
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.4099
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.3936
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.4160
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.4027
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.4062
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.3962
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.4125
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.4265
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.4235
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.3949
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.4055
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3924
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3997
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3852
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3950
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.4037
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3944
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.3832
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.3923
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3968
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.4037
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.3883
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.4031
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.4061
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.4025
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.3931
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.4085
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.4120
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.4179
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.3891
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.3756
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3794
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3604
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3610
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3667
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.3847
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3728
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.3669
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.3746
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3649
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.3825
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.3574
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.3837
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.3808
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.3780
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.3700
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.3818
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.3843
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.3712
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.3718
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.3789
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3717
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3615
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3591
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3750
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.3710
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3699
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.3712
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.3714
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3650
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.3772
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.3627
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.3736
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.3721
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.3737
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.3740
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.3794
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.3781
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.3683
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.3722
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.3537
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3557
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3448
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3420
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3524
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.3520
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3436
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.3411
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.3535
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3525
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.3547
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.3461
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.3590
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.3567
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.3618
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.3564
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.3596
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.3511
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.3667
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.3505
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.3592
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3576
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3473
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3450
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3471
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.3633
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3469
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.3475
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.3508
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3559
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.3625

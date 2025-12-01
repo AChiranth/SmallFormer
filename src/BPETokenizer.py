@@ -168,6 +168,8 @@ class BPETokenizer:
         self.token2id = {tok: i for i, tok in enumerate(sorted_tokens)}
         self.id2token = {i: tok for tok, i in self.token2id.items()}
 
+        self.unk_id = self.token2id[self.unk_token]
+
         self._fitted = True
         print(f"[BPE] Training complete. Final vocab size = {len(self.token2id)}")
 
@@ -239,16 +241,25 @@ class BPETokenizer:
         if not self._fitted:
             raise RuntimeError("Tokenizer must be fitted first.")
 
+        # If tokens are integers → convert to token strings
         if tokens and isinstance(tokens[0], int):
-            tokens = [self.id2token[t] for t in tokens]
+            cleaned = []
+            for t in tokens:
+                if t < len(self.id2token):
+                    cleaned.append(self.id2token[t])
+                else:
+                    cleaned.append(self.unk_token)
+            tokens = cleaned
 
         words = []
         current = ""
 
         for tok in tokens:
-            if tok in (self.bos_token, self.eos_token):
+            # skip BOS/EOS
+            if tok == self.bos_token or tok == self.eos_token:
                 continue
 
+            # If token ends in </w>, it's a completed word
             if tok.endswith(self.end_of_word):
                 current += tok[:-len(self.end_of_word)]
                 words.append(current)
@@ -256,6 +267,7 @@ class BPETokenizer:
             else:
                 current += tok
 
+        # flush last partial word
         if current:
             words.append(current)
 

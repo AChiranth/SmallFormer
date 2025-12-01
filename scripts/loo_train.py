@@ -22,9 +22,7 @@ from src.Transformer import build_transformer
 from src.BPETokenizer import BPETokenizer
 add_safe_globals([BPETokenizer])
 
-# ------------------------
-# Device
-# ------------------------
+
 def get_device():
     if torch.cuda.is_available():
         return torch.device("cuda")
@@ -33,9 +31,12 @@ def get_device():
     return torch.device("cpu")
 
 
-# ------------------------
-# Main LOO Pipeline
-# ------------------------
+def print_flush(*args, **kwargs):
+    """Convenience wrapper to always flush prints for SLURM."""
+    print(*args, **kwargs)
+    sys.stdout.flush()
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--tokens", type=str, default="texts/tokenized/tokens.npy")
@@ -52,23 +53,24 @@ def main():
     parser.add_argument("--n_heads", type=int, default=4)
     parser.add_argument("--d_ff", type=int, default=1024)
     parser.add_argument("--dropout", type=float, default=0.1)
-    parser.add_argument("--downsample", type=int, default=1,
-                    help="Use every Nth sliding window to speed up training.")
+    parser.add_argument("--downsample", type=int, default=1)
     args = parser.parse_args()
 
     device = get_device()
-    print("DEVICE:", device)
+    print_flush("DEVICE:", device)
 
     # Load corpus + tokenizer
     tokens, offsets = load_corpus(args.tokens, args.offsets)
     tokenizer: BPETokenizer = torch.load(args.tokenizer)
 
-    vocab_size = int(tokens.max()) + 1
+    vocab_size = tokenizer.vocab_size + 3
+    print_flush("Tokenizer vocab size:", tokenizer.vocab_size)
+
     total_docs = len(offsets) - 1
     results = {}
 
     for doc_idx in range(total_docs):
-        print(f"\n=== LOO Fold {doc_idx+1}/{total_docs} ===")
+        print_flush(f"\n=== LOO Fold {doc_idx+1}/{total_docs} ===")
 
         s, e = offsets[doc_idx], offsets[doc_idx+1]
         heldout_tokens = tokens[s:e]
@@ -78,7 +80,6 @@ def main():
             train_tokens,
             args.block_size,
             args.batch_size,
-            device,
             downsample=args.downsample
         )
 
@@ -97,9 +98,8 @@ def main():
 
         for ep in range(1, args.epochs + 1):
             loss = train_one_epoch(model, loader, optimizer, criterion, device)
-            print(f"Epoch {ep}/{args.epochs} loss={loss:.4f}")
+            print_flush(f"Epoch {ep}/{args.epochs} loss={loss:.4f}")
 
-        # Evaluate on held-out text
         heldout_text = tokenizer.decode(heldout_tokens.tolist())
         pairs = sample_partial_pairs(heldout_text, k=5)
 
@@ -119,7 +119,7 @@ def main():
     with open("loo_results.json", "w") as f:
         json.dump(results, f, indent=2)
 
-    print("\nSaved LOO results → loo_results.json")
+    print_flush("\nSaved LOO results → loo_results.json")
 
 
 if __name__ == "__main__":

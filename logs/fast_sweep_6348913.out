@@ -1,0 +1,486 @@
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.5787
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.5599
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.5321
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.5395
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.5479
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.5570
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.5287
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.5506
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.5587
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.5577
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.5796
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.5537
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.5567
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.5635
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.5571
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.5544
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.5680
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.5627
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.5565
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.5486
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.4537
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.4288
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.4172
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.4238
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.4331
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.4376
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.4334
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.4273
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.4395
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.4478
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.4431
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.4437
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.4552
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.4382
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.4460
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.4406
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.4486
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.4475
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.4487
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.4325
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.3991
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3986
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3826
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3849
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3864
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.4150
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3844
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.3926
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.3932
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3991
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.3972
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.3987
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.4003
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.4041
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.3939
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.3994
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.4094
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.4016
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.4068
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.3930
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.3801
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3807
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3754
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3721
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3842
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.3792
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3753
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.3788
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.3789
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3798
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.3865
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.3737
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.3830
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.3924
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.3797
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.3808
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.3830
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.3819
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.3886
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.3783
+
+Saved LOO results → loo_results.json
+DEVICE: cuda
+Tokenizer vocab size: 8000
+
+=== LOO Fold 1/20 ===
+Epoch 1/1 loss=0.4021
+
+=== LOO Fold 2/20 ===
+Epoch 1/1 loss=0.3925
+
+=== LOO Fold 3/20 ===
+Epoch 1/1 loss=0.3844
+
+=== LOO Fold 4/20 ===
+Epoch 1/1 loss=0.3955
+
+=== LOO Fold 5/20 ===
+Epoch 1/1 loss=0.3915
+
+=== LOO Fold 6/20 ===
+Epoch 1/1 loss=0.3959
+
+=== LOO Fold 7/20 ===
+Epoch 1/1 loss=0.3791
+
+=== LOO Fold 8/20 ===
+Epoch 1/1 loss=0.3903
+
+=== LOO Fold 9/20 ===
+Epoch 1/1 loss=0.3908
+
+=== LOO Fold 10/20 ===
+Epoch 1/1 loss=0.3954
+
+=== LOO Fold 11/20 ===
+Epoch 1/1 loss=0.3992
+
+=== LOO Fold 12/20 ===
+Epoch 1/1 loss=0.3821
+
+=== LOO Fold 13/20 ===
+Epoch 1/1 loss=0.3928
+
+=== LOO Fold 14/20 ===
+Epoch 1/1 loss=0.4015
+
+=== LOO Fold 15/20 ===
+Epoch 1/1 loss=0.3941
+
+=== LOO Fold 16/20 ===
+Epoch 1/1 loss=0.3927
+
+=== LOO Fold 17/20 ===
+Epoch 1/1 loss=0.3953
+
+=== LOO Fold 18/20 ===
+Epoch 1/1 loss=0.4000
+
+=== LOO Fold 19/20 ===
+Epoch 1/1 loss=0.3905
+
+=== LOO Fold 20/20 ===
+Epoch 1/1 loss=0.3885
+
+Saved LOO results → loo_results.json
+Total configs: 5
+
+====================================================
+Running configuration: {'d_model': 384, 'n_heads': 4, 'n_layers': 2, 'd_ff': 768, 'lr': 0.0003}
+Saving results to: loo_results_d384_h4_lr0.0003.json
+====================================================
+
+
+--- Fold Scores ---
+doc_0: 0.7789
+doc_1: 0.8015
+doc_2: 0.7938
+doc_3: 0.8027
+doc_4: 0.7891
+doc_5: 0.7921
+doc_6: 0.7984
+doc_7: 0.7925
+doc_8: 0.7938
+doc_9: 0.7888
+doc_10: 0.7713
+doc_11: 0.7938
+doc_12: 0.8080
+doc_13: 0.7874
+doc_14: 0.8034
+doc_15: 0.7877
+doc_16: 0.8043
+doc_17: 0.7875
+doc_18: 0.7933
+doc_19: 0.7880
+
+>>> Overall mean BERTScore: 0.7928
+
+
+====================================================
+Running configuration: {'d_model': 384, 'n_heads': 4, 'n_layers': 2, 'd_ff': 768, 'lr': 0.0005}
+Saving results to: loo_results_d384_h4_lr0.0005.json
+====================================================
+
+
+--- Fold Scores ---
+doc_0: 0.7995
+doc_1: 0.8083
+doc_2: 0.7900
+doc_3: 0.7949
+doc_4: 0.7978
+doc_5: 0.7895
+doc_6: 0.7978
+doc_7: 0.8077
+doc_8: 0.7982
+doc_9: 0.7990
+doc_10: 0.7688
+doc_11: 0.8093
+doc_12: 0.8000
+doc_13: 0.7945
+doc_14: 0.7997
+doc_15: 0.7825
+doc_16: 0.7969
+doc_17: 0.7989
+doc_18: 0.7779
+doc_19: 0.7817
+
+>>> Overall mean BERTScore: 0.7946
+
+
+====================================================
+Running configuration: {'d_model': 384, 'n_heads': 4, 'n_layers': 2, 'd_ff': 768, 'lr': 0.0007}
+Saving results to: loo_results_d384_h4_lr0.0007.json
+====================================================
+
+
+--- Fold Scores ---
+doc_0: 0.7973
+doc_1: 0.7994
+doc_2: 0.7946
+doc_3: 0.7942
+doc_4: 0.7841
+doc_5: 0.7885
+doc_6: 0.8034
+doc_7: 0.8004
+doc_8: 0.7886
+doc_9: 0.7939
+doc_10: 0.7769
+doc_11: 0.7854
+doc_12: 0.8005
+doc_13: 0.7900
+doc_14: 0.7984
+doc_15: 0.7924
+doc_16: 0.7753
+doc_17: 0.7724
+doc_18: 0.7962
+doc_19: 0.7974
+
+>>> Overall mean BERTScore: 0.7915
+
+
+====================================================
+Running configuration: {'d_model': 384, 'n_heads': 4, 'n_layers': 2, 'd_ff': 768, 'lr': 0.001}
+Saving results to: loo_results_d384_h4_lr0.001.json
+====================================================
+
+
+--- Fold Scores ---
+doc_0: 0.7857
+doc_1: 0.8128
+doc_2: 0.8179
+doc_3: 0.8013
+doc_4: 0.8003
+doc_5: 0.8080
+doc_6: 0.8027
+doc_7: 0.8097
+doc_8: 0.7977
+doc_9: 0.8021
+doc_10: 0.7982
+doc_11: 0.7913
+doc_12: 0.8040
+doc_13: 0.8077
+doc_14: 0.7847
+doc_15: 0.8048
+doc_16: 0.7920
+doc_17: 0.7849
+doc_18: 0.7786
+doc_19: 0.7851
+
+>>> Overall mean BERTScore: 0.7985
+
+
+====================================================
+Running configuration: {'d_model': 384, 'n_heads': 4, 'n_layers': 2, 'd_ff': 768, 'lr': 0.0015}
+Saving results to: loo_results_d384_h4_lr0.0015.json
+====================================================
+
+
+--- Fold Scores ---
+doc_0: 0.7775
+doc_1: 0.7985
+doc_2: 0.8056
+doc_3: 0.7879
+doc_4: 0.7991
+doc_5: 0.7986
+doc_6: 0.7948
+doc_7: 0.7907
+doc_8: 0.7894
+doc_9: 0.7977
+doc_10: 0.7730
+doc_11: 0.7680
+doc_12: 0.7952
+doc_13: 0.7969
+doc_14: 0.7929
+doc_15: 0.7875
+doc_16: 0.7990
+doc_17: 0.7913
+doc_18: 0.7993
+doc_19: 0.7967
+
+>>> Overall mean BERTScore: 0.7920
+
+
+Top Results:
+   d_model  n_heads  n_layers  d_ff      lr  mean_bertscore
+3      384        4         2   768  0.0010        0.798480
+1      384        4         2   768  0.0005        0.794649
+0      384        4         2   768  0.0003        0.792824
+4      384        4         2   768  0.0015        0.791986
+2      384        4         2   768  0.0007        0.791469
+
+Saved: full_hparam_results.csv
